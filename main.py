@@ -1,16 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-import setEnglish
-import details
-import BotDB
-import sendFriendRq
-from BotInfo import BotInfo
+import DataInterac
+import Settings
+import MakeBotProfile
 
 driver = webdriver.Firefox()
 driver.maximize_window()
 driver.get("http://wwww.facebook.com")
-
 email =  driver.find_element_by_id("email")
 passw = driver.find_element_by_id("pass")
 email.send_keys("hoangminh.le12302@gmail.com")

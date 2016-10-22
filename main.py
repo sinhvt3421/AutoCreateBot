@@ -7,6 +7,10 @@ import MakeBotProfile
 import ConfigParser
 import sys
 from MakeBotProfile import FacebookRegister
+from Settings import LoadProfile
+from Settings import ProxyChange
+from Settings import SaveDeadProxy
+from Settings import SaveProfile
 
 """driver = webdriver.Firefox()
 driver.maximize_window()
@@ -34,12 +38,27 @@ config = ConfigParser.SafeConfigParser()
 config.read('config.ini')
 name = config.get('folder_path','name')
 img = config.get('folder_path','img')
+path = config.get('folder_path','profile')
+ip = config.get('folder_path','PROXY_HOST')
+port = config.get('folder_path','PROXY_PORT')
 print(name)
 print(img)
+print(path)
+print(ip)
+print(port)
+
+#load and install pro5
+pro5 = LoadProfile.loadFFPro5(path)
+pro5 = ProxyChange.install_proxy(pro5,ip,port)
+driver = webdriver.Firefox(firefox_profile=pro5)
 
 #written by tuan
-driver = webdriver.Firefox()
 name = ["Nguyen", "Minh Thuy"] #last name, first name 
 phone_number = sys.argv[1]
 FacebookRegister.process(driver, name, phone_number)
-#written by tuan
+
+#check weather pro5 was blocked
+SaveDeadProxy.save_dead_proxy(driver, ip, port)
+
+#save pro5 after finish registering 
+SaveProfile.saveProfile(driver,path)

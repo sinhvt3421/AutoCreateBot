@@ -11,7 +11,7 @@ nick_name = ["Cookie","Cun","Gau","Kute","Lonely","Ngay ngo","Nothing","meo meo"
 def Overview(drv):
     all_detail = drv.find_elements_by_xpath("//ul[@data-testid='info_section_left_nav']/li")
     #high school
-    """all_detail[1].click()
+    all_detail[1].click()
     time.sleep(0.5)
     drv.execute_script("window.scrollTo(0,90)")
     high_school = drv.find_element_by_xpath("//a[@data-testid='add_highschool']")
@@ -67,7 +67,7 @@ def Overview(drv):
     submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
     submit.submit()
     time.sleep(2)
-    """
+    
     #relationship
     all_detail[4].click()
     time.sleep(0.5)

@@ -40,7 +40,8 @@ def process(driver, name, phone_number):
     fillDate(driver, month, "month")
     day = randint(1, 28)
     fillDate(driver, day, "day")
-
+    time.sleep(1)
+    
     birthday.append([day, month, year])
 
     gender = driver.find_element_by_name("sex")

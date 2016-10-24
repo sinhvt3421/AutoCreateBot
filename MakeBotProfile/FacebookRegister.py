@@ -20,20 +20,15 @@ def fillDate(drv, keys, indext):
     button = drv.find_element_by_id(indext)
     button.click()
     all_options = button.find_elements_by_tag_name("option")
+    time.sleep(1)
     for option in all_options:
         if option.get_attribute("value") == str(keys):
             option.click()
-            time.sleep(1)
             break
 
 def process(driver, name, phone_number):
     driver.get("http://www.facebook.com")
-    fillName(driver, name[1], "firstname")
-    fillName(driver, name[0], "lastname")
-    fillName(driver, "InfoRe2811", "reg_passwd__")
-    fillName(driver, str(phone_number), "reg_email__")
-    fillName(driver, str(phone_number), "reg_email_confirmation__")
-
+    
     year = randint(1996, 1998)
     fillDate(driver, year, "year")
     month = randint(1, 12) 
@@ -43,6 +38,12 @@ def process(driver, name, phone_number):
     time.sleep(1)
     
     birthday.append([day, month, year])
+
+    fillName(driver, name[1], "firstname")
+    fillName(driver, name[0], "lastname")
+    fillName(driver, "InfoRe2811", "reg_passwd__")
+    fillName(driver, str(phone_number), "reg_email__")
+    fillName(driver, str(phone_number), "reg_email_confirmation__")
 
     gender = driver.find_element_by_name("sex")
     gender.click()

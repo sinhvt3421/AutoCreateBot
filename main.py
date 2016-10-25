@@ -35,20 +35,25 @@ driver.get("http://www.facebook.com")
 # hoangminh12302
 while(True):
     try:
-        driver.find_element_by_xpath("//button[@data-testid='facebar_search_button']")
+        driver.find_element_by_class_name("_2s25")
         break
     except:
         time.sleep(5)
         continue
         
 #set english        
-SetEnglish.setting(driver)
+# SetEnglish.setting(driver)
 #get id 
-name =  driver.find_element_by_class_name("_2s25")
-img = driver.find_element_by_xpath(".//img").get_attribute("id")
-id = img.split('_')[3]
-name.click()
-driver.get("www.facebook.com/" + id + "/" + "about")
+while(True):
+    try:
+        name =  driver.find_element_by_class_name("_2s25")
+        img = driver.find_element_by_xpath(".//img").get_attribute("id")
+        id = img.split('_')[3]
+        name.click()
+        driver.get("www.facebook.com/" + id + "/" + "about")
+        break
+    except:
+        continue
 
 Details.Overview(driver)
 

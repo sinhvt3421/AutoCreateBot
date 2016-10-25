@@ -12,11 +12,13 @@ from MakeBotProfile import UpImage
 from MakeBotProfile import LikePage
 from MakeBotProfile import Details
 from MakeBotProfile import SendFriendRqs
-
+from LikePage import do_like
+from FirstStatus import upStatus
 # config = ConfigParser.SafeConfigParser()
 # config.read('config.ini')
 # name = config.get('folder_path','name')
 # img = config.get('folder_path','img')
+# caption = config.get('folder_path', 'caption')
 # path = config.get('folder_path','profile')
 # ip = config.get('folder_path','PROXY_HOST')
 # port = config.get('folder_path','PROXY_PORT')
@@ -62,3 +64,9 @@ Details.Overview(driver)
 
 #save pro5 after finish registering 
 # SaveProfile.saveProfile(driver,path)
+
+#like movies, music, etc
+#do_like(driver)
+
+#first status
+#upStatus(driver, img, caption)

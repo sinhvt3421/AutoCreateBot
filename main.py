@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import time
 import sys
 from MakeBotProfile import FacebookRegister
 from Settings import LoadProfile
@@ -7,36 +8,39 @@ from Settings import ProxyChange
 from Settings import SaveDeadProxy
 from Settings import SaveProfile
 from Settings import SetEnglish
-from MakeBotProfile import Upimage
+from MakeBotProfile import UpImage
 from MakeBotProfile import LikePage
 from MakeBotProfile import Details
 from MakeBotProfile import SendFriendRqs
 
-config = ConfigParser.SafeConfigParser()
-config.read('config.ini')
-name = config.get('folder_path','name')
-img = config.get('folder_path','img')
-path = config.get('folder_path','profile')
-ip = config.get('folder_path','PROXY_HOST')
-port = config.get('folder_path','PROXY_PORT')
+# config = ConfigParser.SafeConfigParser()
+# config.read('config.ini')
+# name = config.get('folder_path','name')
+# img = config.get('folder_path','img')
+# path = config.get('folder_path','profile')
+# ip = config.get('folder_path','PROXY_HOST')
+# port = config.get('folder_path','PROXY_PORT')
 
 #load and install pro5
 # pro5 = LoadProfile.loadFFPro5(path)
 # pro5 = ProxyChange.install_proxy(pro5,ip,port)
 # driver = webdriver.Firefox(firefox_profile=pro5)
 driver = webdriver.Firefox()
+driver.get("http://www.facebook.com")
 #written by tuan
-name = ["Nguyen", "Minh Thuy"] #last name, first name 
-phone_number = sys.argv[1]
-FacebookRegister.process(driver, name, phone_number)
-
-while(True)
+# name = ["Nguyen", "Minh Thuy"] #last name, first name 
+# phone_number = sys.argv[1]
+# FacebookRegister.process(driver, name, phone_number)
+# hoangminh.le12302@gmail.com
+# hoangminh12302
+while(True):
     try:
         driver.find_element_by_xpath("//button[@data-testid='facebar_search_button']")
         break
     except:
         time.sleep(5)
         continue
+        
 #set english        
 SetEnglish.setting(driver)
 #get id 

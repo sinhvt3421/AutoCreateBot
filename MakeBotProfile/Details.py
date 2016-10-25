@@ -13,7 +13,7 @@ def Overview(drv):
     #high school
     all_detail[1].click()
     time.sleep(0.5)
-    drv.execute_script("window.scrollTo(0,90)")
+    # drv.execute_script("window.scrollTo(0,90)")
     high_school = drv.find_element_by_xpath("//a[@data-testid='add_highschool']")
     high_school.click()
     time.sleep(2)

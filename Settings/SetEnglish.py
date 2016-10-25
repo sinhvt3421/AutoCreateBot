@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import time
 
 def setting(drv):
     drv.get("https://www.facebook.com/settings?tab=language&section=account&view")

@@ -1,6 +1,5 @@
 from selenium import webdriver
 import time
-import SaveDeadProxy
 
 #set the proxy sever and return a firefox profile
 def install_proxy(fp,PROXY_HOST,PROXY_PORT):

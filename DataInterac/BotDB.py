@@ -19,6 +19,15 @@ def GetStatus():
     con.commit()
     con.close()
     return results
+def GetProfile(profile):
+	con =  pymssql.connect(server='orm.vn', user='thanh', password='TheNew0RM2015', database='tool.orm.vn_v4')
+	cursor = con.cursor(as_dict=True)
+    cursor.callproc('Bot_Monitor_GetProfile')
+    cursor.nextset()
+    results = cursor.fetchall()
+    con.commit()
+    con.close()
+    return results
 def Insert(bt):
     con =  pymssql.connect(server='orm.vn', user='thanh', password='TheNew0RM2015', database='tool.orm.vn_v4')
     cursor = con.cursor(as_dict=True)

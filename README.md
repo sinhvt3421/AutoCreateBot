@@ -1,2 +1,2 @@
 # AutoCreateBot
-An application using for creating bot account for data analyzation 
+Create and manage bot accounts massively for personal purposes (ex: data crawling)

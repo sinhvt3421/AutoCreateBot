@@ -11,6 +11,7 @@ def sendRequest(drv):
         try:
             add = drv.find_element_by_class_name("addButton")
             add.click()
+            time.sleep(2)
         except:
             print(Exception.args)
         action = ActionChains(drv)
@@ -38,9 +39,9 @@ def likeFanpage(drv):
         action.move_by_offset(100,100)
         action.perform()
         time.sleep(1)
-        drv.execute_script("window.scrollBy(0,document.body.scrollHeight)")
-        time.sleep(10)
-        drv.execute_script("window.scrollBy(0,document.body.scrollHeight)")
-        time.sleep(15)
-        drv.execute_script("window.scrollBy(0,document.body.scrollHeight)")
-        time.sleep(5)
+        action.send_keys(Keys.PAGE_DOWN)
+        action.perform()
+        time.sleep(2)
+        action.send_keys(Keys.PAGE_DOWN)
+        action.perform()
+        time.sleep(3)

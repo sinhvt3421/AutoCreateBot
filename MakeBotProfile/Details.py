@@ -19,143 +19,137 @@ quotes = ["You always have the choice to be happy. Learn to understand the purpo
 def Overview(drv):
     all_detail = drv.find_elements_by_xpath("//ul[@data-testid='info_section_left_nav']/li")
     #high school
-    # while (True):
-    #     try:
-    #         all_detail[1].click()
-    #         time.sleep(0.5)
-    #         action = ActionChains(drv)
-    #         action.send_keys(Keys.PAGE_DOWN)
-    #         action.perform()
-    #         high_school = drv.find_element_by_link_text("Add a high school");
-    #         high_school.click()
-    #         time.sleep(2)
-    #         school = drv.find_element_by_xpath("//div/input[@name='school_text']")
-    #         school.click()
-    #         sch = list_school[randint(0, 9)]
-    #         school.send_keys(sch)
-    #         time.sleep(0.5)
-    #         school.send_keys(Keys.DOWN)
-    #         time.sleep(0.2)
-    #         school.send_keys(Keys.ENTER)
-    #         time.sleep(1)
-    #         submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-    #         print(submit.get_attribute("innerHTML"))
-    #         submit.submit()
-    #         break
-    #     except:
-    #         print(Exception.args)
-    #         continue
+    while (True):
+        try:
+            all_detail[1].click()
+            time.sleep(0.5)
+            action = ActionChains(drv)
+            action.send_keys(Keys.PAGE_DOWN)
+            action.perform()
+            high_school = drv.find_element_by_link_text("Add a high school");
+            high_school.click()
+            time.sleep(2)
+            school = drv.find_element_by_xpath("//div/input[@name='school_text']")
+            school.click()
+            sch = list_school[randint(0, 9)]
+            school.send_keys(sch)
+            time.sleep(0.5)
+            school.send_keys(Keys.DOWN)
+            time.sleep(0.2)
+            school.send_keys(Keys.ENTER)
+            time.sleep(1)
+            submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
+            print(submit.get_attribute("innerHTML"))
+            submit.submit()
+            break
+        except:
+            continue
     
     # #place
-    # while (True):
-    #     try:
-    #         all_detail[2].click()
-    #         time.sleep(0.5)
-    #         current_city =  drv.find_element_by_xpath("//a[@data-testid='add_current_city']")
-    #         current_city.click()
-    #         time.sleep(2)
-    #         city =  drv.find_element_by_xpath("//div/input[@class='inputtext textInput']")
-    #         time.sleep(0.1)
-    #         city.click()
-    #         time.sleep(0.1)
-    #         city.send_keys("japan")
-    #         time.sleep(1)
-    #         ran = randint(2,6)
-    #         for i in range(0, ran):
-    #             city.send_keys(Keys.DOWN)
-    #             time.sleep(0.2)
-    #         city.send_keys(Keys.ENTER)
-    #         time.sleep(0.5)
-    #         submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-    #         submit.submit()
-    #         break
-    #     except:
-    #         print(Exception.args)
-    #         continue
-    # #hometown 
-    # while (True):
-    #     try:
-    #         time.sleep(2)
-    #         home_town = drv.find_element_by_xpath("//a[@data-testid='add_hometown']")
-    #         home_town.click()
-    #         time.sleep(2)
-    #         home = drv.find_element_by_xpath("//div/input[@class='inputtext textInput']")
-    #         home.click()
-    #         time.sleep(0.1)
-    #         home.send_keys("ha")
-    #         time.sleep(1)
-    #         home.send_keys(Keys.DOWN)
-    #         time.sleep(0.2)
-    #         home.send_keys(Keys.ENTER)
-    #         time.sleep(0.5)
-    #         submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-    #         submit.submit()
-    #         time.sleep(2)
-    #         break
-    #     except:
-    #         print(Exception.args)
-    #         continue
+    while (True):
+        try:
+            all_detail[2].click()
+            time.sleep(0.5)
+            current_city =  drv.find_element_by_xpath("//a[@data-testid='add_current_city']")
+            current_city.click()
+            time.sleep(2)
+            city =  drv.find_element_by_xpath("//div/input[@class='inputtext textInput']")
+            time.sleep(0.1)
+            city.click()
+            time.sleep(0.1)
+            city.send_keys("japan")
+            time.sleep(1)
+            ran = randint(2,6)
+            for i in range(0, ran):
+                city.send_keys(Keys.DOWN)
+                time.sleep(0.2)
+            city.send_keys(Keys.ENTER)
+            time.sleep(0.5)
+            submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
+            submit.submit()
+            break
+        except:
+            continue
+    #hometown 
+    while (True):
+        try:
+            time.sleep(2)
+            home_town = drv.find_element_by_xpath("//a[@data-testid='add_hometown']")
+            home_town.click()
+            time.sleep(2)
+            home = drv.find_element_by_xpath("//div/input[@class='inputtext textInput']")
+            home.click()
+            time.sleep(0.1)
+            home.send_keys("ha")
+            time.sleep(1)
+            home.send_keys(Keys.DOWN)
+            time.sleep(0.2)
+            home.send_keys(Keys.ENTER)
+            time.sleep(0.5)
+            submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
+            submit.submit()
+            time.sleep(2)
+            break
+        except:
+            continue
     
-    #relationship
-    # while (True):
-    #     try:
-    #         all_detail[4].click()
-    #         time.sleep(0.5)
-    #         rela = drv.find_element_by_xpath("//li/a[@data-testid='add_relationship']")
-    #         rela.click()
-    #         time.sleep(2)
-    #         single = drv.find_element_by_xpath("//div/select/option[@value='1']")
-    #         single.click()
-    #         time.sleep(0.5)
-    #         submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-    #         submit.submit()
-    #         time.sleep(2)
-    #         break
-    #     except:
-    #         print(Exception.args)
-    #         continue
+    relationship
+    while (True):
+        try:
+            all_detail[4].click()
+            time.sleep(0.5)
+            rela = drv.find_element_by_xpath("//li/a[@data-testid='add_relationship']")
+            rela.click()
+            time.sleep(2)
+            single = drv.find_element_by_xpath("//div/select/option[@value='1']")
+            single.click()
+            time.sleep(0.5)
+            submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
+            submit.submit()
+            time.sleep(2)
+            break
+        except:
+            continue
 
     #Detail about
-    # while (True):
-    #     try:
-    #         all_detail[5].click()
-    #         time.sleep(0.5)
-    #         detail = drv.find_element_by_xpath("//a[@data-testid='add_details']")
-    #         detail.click()
-    #         time.sleep(2)
-    #         write = drv.find_element_by_class_name("_3egg")
-    #         ran = randint(0,5)
-    #         write.send_keys(about_you[ran])
-    #         time.sleep(0.5)
-    #         submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-    #         submit.submit()
-    #         time.sleep(2)
-    #         break
-    #     except:
-    #         print(Exception.args)
-    #         continue
+    while (True):
+        try:
+            all_detail[5].click()
+            time.sleep(0.5)
+            detail = drv.find_element_by_xpath("//a[@data-testid='add_details']")
+            detail.click()
+            time.sleep(2)
+            write = drv.find_element_by_class_name("_3egg")
+            ran = randint(0,5)
+            write.send_keys(about_you[ran])
+            time.sleep(0.5)
+            submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
+            submit.submit()
+            time.sleep(2)
+            break
+        except:
+            continue
             
-    # while (True):
-    #     try:
-    #         all_detail[5].click()
-    #         time.sleep(0.5)
-    #         nick = drv.find_element_by_xpath("//a[@data-testid='add_other_names']")
-    #         nick.click()
-    #         time.sleep(2)
-    #         name = drv.find_element_by_xpath("//div[@class='_pt5 _4bl7']/label/input")
-    #         ran = randint(0,12)
-    #         name.send_keys(nick_name[ran])
-    #         time.sleep(0.7)
-    #         check = drv.find_element_by_class_name("_kv1")
-    #         check.click()
-    #         time.sleep(0.5)
-    #         submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-    #         submit.submit()
-    #         time.sleep(2)
-    #         break
-    #     except:
-    #         print(Exception.args)
-    #         continue
+    while (True):
+        try:
+            all_detail[5].click()
+            time.sleep(0.5)
+            nick = drv.find_element_by_xpath("//a[@data-testid='add_other_names']")
+            nick.click()
+            time.sleep(2)
+            name = drv.find_element_by_xpath("//div[@class='_pt5 _4bl7']/label/input")
+            ran = randint(0,12)
+            name.send_keys(nick_name[ran])
+            time.sleep(0.7)
+            check = drv.find_element_by_class_name("_kv1")
+            check.click()
+            time.sleep(0.5)
+            submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
+            submit.submit()
+            time.sleep(2)
+            break
+        except:
+            continue
     
     #quote
     while (True):
@@ -174,5 +168,4 @@ def Overview(drv):
             time.sleep(2)
             break
         except:
-            print(Exception.args)
             continue

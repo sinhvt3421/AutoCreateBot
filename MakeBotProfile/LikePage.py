@@ -23,6 +23,7 @@ def do_like(drv,id):
                     btn.click()
                     time.sleep(5)
                 time.sleep(2)
+            break
         except:
             continue
     

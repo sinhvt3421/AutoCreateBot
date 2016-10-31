@@ -14,13 +14,13 @@ def fillName(drv, keys, name):
     text_space = drv.find_element_by_name(name)
     text_space.click()
     text_space.send_keys(keys)
-    time.sleep(1)
+    time.sleep(2)
 
 def fillDate(drv, keys, indext):
     button = drv.find_element_by_id(indext)
     button.click()
     all_options = button.find_elements_by_tag_name("option")
-    time.sleep(1)
+    time.sleep(2)
     for option in all_options:
         if option.get_attribute("value") == str(keys):
             option.click()
@@ -49,11 +49,12 @@ def process(driver, name, phone_number):
     gender.click()
     time.sleep(1)
     #finish
-    complete_reg = driver.find_element_by_name("websubmit")
-    complete_reg.click()
-    return birthday 
-
-
+    try:
+        complete_reg = driver.find_element_by_name("websubmit")
+        complete_reg.click()
+    except:
+        pass
+    
 
 
 

@@ -93,7 +93,7 @@ def Overview(drv):
         except:
             continue
     
-    relationship
+    #relationship
     while (True):
         try:
             all_detail[4].click()

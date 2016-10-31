@@ -38,11 +38,12 @@ driver = webdriver.Firefox(firefox_profile=pro5)
 driver.get("http://www.facebook.com")
 
 #written by tuan
-name = ["Nguyen", "Minh Thuy"] #last name, first name 
+name = ["Nguyen", "Thuy Linh"] #last name, first name 
 phone_number = sys.argv[1]
 FacebookRegister.process(driver, name, phone_number)
 #   hoangminh.le12302@gmail.com
 # hoangminh12302
+time.sleep(120)
 while(True):
     try:
         driver.find_element_by_class_name("_2s25")
@@ -79,6 +80,7 @@ LikePage.do_like(driver,id)
 time.sleep(3)
 #first status
 FirstStatus.upStatus(driver, img, caption)
+time.sleep(2)
 #send reques
 SendFriendRqs.sendRequest(driver)
 time.sleep(2)

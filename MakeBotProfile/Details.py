@@ -19,7 +19,7 @@ quotes = ["You always have the choice to be happy. Learn to understand the purpo
 def Overview(drv):
     all_detail = drv.find_elements_by_xpath("//ul[@data-testid='info_section_left_nav']/li")
     #high school
-    while (True):
+    for i in range(0, 3, 1):
         try:
             all_detail[1].click()
             time.sleep(0.5)
@@ -46,7 +46,7 @@ def Overview(drv):
             continue
     
     # #place
-    while (True):
+    for i in range(0, 3, 1):
         try:
             all_detail[2].click()
             time.sleep(0.5)
@@ -71,7 +71,7 @@ def Overview(drv):
         except:
             continue
     #hometown 
-    while (True):
+    for i in range(0, 3, 1):
         try:
             time.sleep(2)
             home_town = drv.find_element_by_xpath("//a[@data-testid='add_hometown']")
@@ -94,7 +94,7 @@ def Overview(drv):
             continue
     
     #relationship
-    while (True):
+    for i in range(0, 3, 1):
         try:
             all_detail[4].click()
             time.sleep(0.5)
@@ -112,7 +112,7 @@ def Overview(drv):
             continue
 
     #Detail about
-    while (True):
+    for i in range(0, 3, 1):
         try:
             all_detail[5].click()
             time.sleep(0.5)
@@ -130,7 +130,7 @@ def Overview(drv):
         except:
             continue
             
-    while (True):
+    for i in range(0, 3, 1):
         try:
             all_detail[5].click()
             time.sleep(0.5)
@@ -152,7 +152,7 @@ def Overview(drv):
             continue
     
     #quote
-    while (True):
+    for i in range(0, 3, 1):
         try:
             all_detail[5].click()
             time.sleep(0.5)

@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 def do_like(drv,id):
-    while(True):
+    for i in range(0, 3, 1):
         try:
             npage = 2
             #go to profile

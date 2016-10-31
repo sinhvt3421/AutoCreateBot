@@ -17,7 +17,7 @@ def upimage(drv,img,id):
             time.sleep(5)
             break
         except:
-            i++
+            i = i + 1
             continue
     i = 0
     while(i < 5):
@@ -34,5 +34,5 @@ def upimage(drv,img,id):
             save2.click()
             break
         except:
-            i++
+            i = i + 1
             continue

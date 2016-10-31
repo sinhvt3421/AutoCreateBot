@@ -41,15 +41,17 @@ driver.get("http://www.facebook.com")
 name = ["Nguyen", "Thuy Linh"] #last name, first name 
 phone_number = sys.argv[1]
 FacebookRegister.process(driver, name, phone_number)
+time.sleep(4)
 #   hoangminh.le12302@gmail.com
 # hoangminh12302
+SaveDeadProxy.save_dead_proxy(driver, ip, port)
 time.sleep(120)
+
 while(True):
     try:
         driver.find_element_by_class_name("_2s25")
         break
     except:
-        SaveDeadProxy.save_dead_proxy(driver, ip, port)
 
         time.sleep(5)
         continue

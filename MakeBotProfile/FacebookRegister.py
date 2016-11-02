@@ -4,6 +4,7 @@
 
 from selenium import webdriver
 from random import randint
+from selenium.webdriver.common.action_chains import ActionChains
 import sys
 import time
 
@@ -13,16 +14,27 @@ custom_id = 0
 def fillName(drv, keys, name):
     text_space = drv.find_element_by_name(name)
     text_space.click()
-    text_space.send_keys(keys)
+    # text_space.send_keys(keys)
+    
+    for i in keys:
+        time.sleep(0.2)
+        action = ActionChains(drv)
+        action.send_keys(i)
+        action.perform()
     time.sleep(2)
 
 def fillDate(drv, keys, indext):
+    action = ActionChains(drv)
     button = drv.find_element_by_id(indext)
-    button.click()
+    action.click(button)
+    action.perform()
     time.sleep(1)
+
     all_options = button.find_element_by_xpath("option[@value='" + str(keys) + "']")
+    action.click(all_options)
+    action.perform()
     #print("\t" + str(keys))
-    all_options.click()
+    # all_options.click()
     time.sleep(0.2)
     return True
     # for option in all_options:
@@ -42,8 +54,8 @@ def process(driver, name, phone_number):
     fillDate(driver, month, "month")
     time.sleep(0.5)
     year = randint(1996, 1998)
-    for i in range(0, 5, 1):
-        fillDate(driver, year, "year")
+    fillDate(driver, year, "year")
+    time.sleep(1)
         
     time.sleep(1)
     

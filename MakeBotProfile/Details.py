@@ -17,7 +17,14 @@ quotes = ["You always have the choice to be happy. Learn to understand the purpo
            "To the world you may be but one, but to one you might be the world",
             "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage"]
 def Overview(drv):
-    all_detail = drv.find_elements_by_xpath("//ul[@data-testid='info_section_left_nav']/li")
+    for i in range(0, 3, 1):
+        try:
+            all_detail = drv.find_elements_by_xpath("//ul[@data-testid='info_section_left_nav']/li")
+            time.sleep(0.5)
+            break
+        except:
+            continue
+    
     #high school
     for i in range(0, 3, 1):
         try:

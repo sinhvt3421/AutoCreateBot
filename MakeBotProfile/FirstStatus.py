@@ -16,7 +16,7 @@ def upStatus(drv, photo, cap):
             caption = fileCaption.read()
             writeCaption.send_keys(caption)
 
-            time.sleep(10)
+            time.sleep(5)
             postbutton = drv.find_element_by_xpath("//*[text()='Post']")
             postbutton.click()
         except:

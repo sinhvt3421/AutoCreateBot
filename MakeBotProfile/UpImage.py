@@ -29,7 +29,7 @@ def upimage(drv,img,id):
             time.sleep(2)
             cover = drv.find_element_by_xpath("//input[@title='Choose a file to upload']")
             cover.send_keys(img + "2.jpg")
-            time.sleep(1)
+            time.sleep(5)
             save2 = drv.find_element_by_xpath("//button[@name='save']")
             save2.click()
             break

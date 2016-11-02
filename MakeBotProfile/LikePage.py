@@ -8,9 +8,9 @@ def do_like(drv,id):
         try:
             npage = 2
             #go to profile
-            btn = drv.find_element_by_xpath("//a[@data-testid='blue_bar_profile_link']")
-            btn.click()
-            drv.get("wwww.facebook.com/" + id + "/likes")
+            # btn = drv.find_element_by_xpath("//a[@data-testid='blue_bar_profile_link']")
+            # btn.click()
+            drv.get("wwww.facebook.com/profile.php?id=" + id + "&sk=likes")
             # get likes tab 
             html_list = drv.find_element_by_xpath("//div[@role='tablist']")
             tab_list = html_list.find_elements_by_xpath("//a[@role='tab']")

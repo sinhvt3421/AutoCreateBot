@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import ConfigParser
+#import ConfigParser
 import time
 import sys
 from DataInteract.BotInfo import BotInfo
@@ -17,6 +17,7 @@ from MakeBotProfile import SendFriendRqs
 from MakeBotProfile import FacebookRegister
 from MakeBotProfile import FirstStatus
 #config parameter 
+
 config = ConfigParser.SafeConfigParser()
 config.read('config.ini')
 name = config.get('folder_path','name')
@@ -32,29 +33,29 @@ bot.ProxyIp = ip
 bot.ProxyPort = port
 
 #load and install pro5
-#pro5 = LoadProfile.loadFFPro5(path)
-#pro5 = ProxyChange.install_proxy(pro5,ip,port)
-# driver = webdriver.Firefox(firefox_profile=pro5)
+pro5 = LoadProfile.loadFFPro5(path)
+pro5 = ProxyChange.install_proxy(pro5,ip,port)
+driver = webdriver.Firefox(firefox_profile=pro5)
 driver = webdriver.Firefox()
 driver.get("http://www.facebook.com")
 
 #written by tuan
-# name = ["Nguyen", "Thuy Linh"] #last name, first name 
-# phone_number = sys.argv[1]
-# FacebookRegister.process(driver, name, phone_number)
-# time.sleep(4)
-# #   hoangminh.le12302@gmail.com
-# # hoangminh12302
-# SaveDeadProxy.save_dead_proxy(driver, ip, port)
-# time.sleep(120)
+name = [sys.argv[2], sys.argv[3]] #last name, first name 
+phone_number = sys.argv[1]
+FacebookRegister.process(driver, name, phone_number)
+time.sleep(4)
+#   hoangminh.le12302@gmail.com
+# hoangminh12302
+SaveDeadProxy.save_dead_proxy(driver, ip, port)
+time.sleep(120)
 
 #
-email = driver.find_element_by_id('email')
-passw = driver.find_element_by_id('pass')
-email.send_keys('hoangminh.le12302@gmail.com')
-passw.send_keys('hoangminh12302')
-loginbtn = driver.find_element_by_id('loginbutton')
-loginbtn.click()
+# email = driver.find_element_by_id('email')
+# passw = driver.find_element_by_id('pass')
+# email.send_keys('hoangminh.le12302@gmail.com')
+# passw.send_keys('hoangminh12302')
+# loginbtn = driver.find_element_by_id('loginbutton')
+# loginbtn.click()
 
 while(True):
     try:
@@ -93,10 +94,11 @@ time.sleep(4)
 LikePage.do_like(driver,id)
 time.sleep(3)
 #first status
+driver.get("www.facebook.com")
 FirstStatus.upStatus(driver, image, caption)
 time.sleep(2)
 #send reques
-SendFriendRqs.sendRequest(driver)
+# SendFriendRqs.sendRequest(driver)
 time.sleep(2)
 SendFriendRqs.likeFanpage(driver)
 #save pro5 after finish registering 

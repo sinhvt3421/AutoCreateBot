@@ -46,7 +46,7 @@ def Overview(drv):
             school.send_keys(Keys.ENTER)
             time.sleep(1)
             submit = drv.find_element_by_xpath("//div[@class='clearfix _ikh']/div/div/button[@name='__submit__']")
-            print(submit.get_attribute("innerHTML"))
+            # print(submit.get_attribute("innerHTML"))
             submit.submit()
             break
         except:

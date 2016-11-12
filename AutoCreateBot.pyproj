@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c53bccdf-de75-4ef6-ae78-7859edf36ab4}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>main.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="config.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataInteract\BotDB.py" />
+    <Compile Include="DataInteract\BotInfo.py" />
+    <Compile Include="DataInteract\__init__.py" />
+    <Compile Include="main.py" />
+    <Compile Include="MakeBotProfile\Details.py" />
+    <Compile Include="MakeBotProfile\FacebookRegister.py" />
+    <Compile Include="MakeBotProfile\FirstStatus.py" />
+    <Compile Include="MakeBotProfile\LikePage.py" />
+    <Compile Include="MakeBotProfile\SendFriendRqs.py" />
+    <Compile Include="MakeBotProfile\UpImage.py" />
+    <Compile Include="MakeBotProfile\__init__.py" />
+    <Compile Include="Settings\LoadProfile.py" />
+    <Compile Include="Settings\ProxyChange.py" />
+    <Compile Include="Settings\SaveDeadProxy.py" />
+    <Compile Include="Settings\SaveProfile.py" />
+    <Compile Include="Settings\SetEnglish.py" />
+    <Compile Include="Settings\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataInteract" />
+    <Folder Include="MakeBotProfile" />
+    <Folder Include="Settings" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>

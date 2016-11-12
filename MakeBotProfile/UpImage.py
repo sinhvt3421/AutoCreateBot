@@ -11,7 +11,7 @@ def upimage(drv,img,id):
             time.sleep(2)
             up = drv.find_element_by_xpath("//input[@title='Choose a file to upload']")
             up.send_keys(img + "1.jpg")
-            time.sleep(5)
+            time.sleep(10)
             save = drv.find_element_by_xpath("//button[@data-testid='profilePicSaveButton']")
             save.click()
             time.sleep(5)
@@ -29,7 +29,7 @@ def upimage(drv,img,id):
             time.sleep(2)
             cover = drv.find_element_by_xpath("//input[@title='Choose a file to upload']")
             cover.send_keys(img + "2.jpg")
-            time.sleep(5)
+            time.sleep(10)
             save2 = drv.find_element_by_xpath("//button[@name='save']")
             save2.click()
             break

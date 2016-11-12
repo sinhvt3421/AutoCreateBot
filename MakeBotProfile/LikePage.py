@@ -14,7 +14,8 @@ def do_like(drv,id):
             # get likes tab 
             html_list = drv.find_element_by_xpath("//div[@role='tablist']")
             tab_list = html_list.find_elements_by_xpath("//a[@role='tab']")
-            drv.execute_script("window.scrollTo(0, 200)")
+            drv.execute_script("window.scrollTo(0, 300)")
+            time.sleep(5)
             for i in range(0, 5):
                 tab_list[i].click()
                 time.sleep(2)
@@ -22,7 +23,7 @@ def do_like(drv,id):
                     btn = drv.find_element_by_class_name("_vfm")
                     btn.click()
                     time.sleep(5)
-                time.sleep(2)
+                time.sleep(5)
             break
         except:
             continue
